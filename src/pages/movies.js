@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react"
 import "../css/styles.css"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 export default function Movies() {
   const [movieData, setMovieData] = useState({})
@@ -33,35 +35,38 @@ export default function Movies() {
   }
 
   return (
-    <div className="App">
-      <h1 className="header">movie api</h1>
-      <form onSubmit={onSubmit}>
-        <label htmlFor="movietitle">
-          <input
-            id="movieTitle"
-            type="text"
-            placeholder="title"
-            value={movie}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          <input type="submit" value="search" />
-        </label>
-      </form>
-      <br />
-      {movieData.Response === "False" ? (
-        <></>
-      ) : (
-        <div>
-          <h1 className="big">{movieData.Title}</h1>
-          <h1 className="subhead">{movieData.Year}</h1>
-          <img src={movieData.Poster} alt={movieData.Title} />
-          <p className="subhead">{movieData.Genre}</p>
-          <br />
-          <p>{movieData.Plot}</p>
-        </div>
-      )}
-    </div>
+    <Layout className="container">
+      <SEO title="Movie API" />
+      <div className="App">
+        <h1 className="header">movie api</h1>
+        <form onSubmit={onSubmit}>
+          <label htmlFor="movietitle">
+            <input
+              id="movieTitle"
+              type="text"
+              placeholder="title"
+              value={movie}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            <input type="submit" value="search" />
+          </label>
+        </form>
+        <br />
+        {movieData.Response === "False" ? (
+          <></>
+        ) : (
+          <div>
+            <h1 className="big">{movieData.Title}</h1>
+            <h1 className="subhead">{movieData.Year}</h1>
+            <img src={movieData.Poster} alt={movieData.Title} />
+            <p className="subhead">{movieData.Genre}</p>
+            <br />
+            <p>{movieData.Plot}</p>
+          </div>
+        )}
+      </div>
+    </Layout>
   )
 }

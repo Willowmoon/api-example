@@ -1,32 +1,28 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
+  <header>
     <div
       style={{
         margin: `0 auto`,
         maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        padding: `1rem 1.0875rem`,
+        textAlign: "center",
       }}
+      className="dark"
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
+      <h1 className="header" style={{ margin: 0, fontSize: "20px", backgroundColor: "transparent"}}>
+        API Examples
       </h1>
+      <AniLink className="btn small" paintDrip to="movies" hex="#7d755f">
+        Movies
+      </AniLink>
+      <AniLink className="btn small" paintDrip to="giphy" hex="#7d755f">
+        Giphy
+      </AniLink>
     </div>
   </header>
 )
