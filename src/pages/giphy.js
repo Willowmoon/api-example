@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 export default function Giphy() {
   const [gif, setGif] = useState()
   const [gifData, setgifData] = useState({})
-  const [gifTitle, setgifTitle] = useState("")
+  const [gifTitle, setGifTitle] = useState("")
 
   const handleClick = async () => {
     const apiKey = process.env.GIPHY_KEY
@@ -31,12 +31,12 @@ export default function Giphy() {
     if (gifTitle !== "") {
       handleSubmit(gifTitle)
     }
-    setgifTitle("")
+    setGifTitle("")
   }
 
   const handleChange = e => {
     const title = e.target.value
-    setgifTitle(title)
+    setGifTitle(title)
   }
 
   return (
