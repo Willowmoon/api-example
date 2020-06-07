@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
@@ -14,7 +13,10 @@ const Header = ({ siteTitle }) => (
       }}
       className="dark"
     >
-      <h1 className="header" style={{ margin: 0, fontSize: "20px", backgroundColor: "transparent"}}>
+      <h1
+        className="header"
+        style={{ margin: 0, fontSize: "20px", backgroundColor: "transparent" }}
+      >
         API Examples
       </h1>
       <AniLink className="btn small" paintDrip to="movies" hex="#7d755f">
@@ -22,6 +24,9 @@ const Header = ({ siteTitle }) => (
       </AniLink>
       <AniLink className="btn small" paintDrip to="giphy" hex="#7d755f">
         Giphy
+      </AniLink>
+      <AniLink className="btn small" paintDrip to="weather" hex="#7d755f">
+        Weather
       </AniLink>
     </div>
   </header>

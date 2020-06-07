@@ -1,6 +1,5 @@
 import React from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-
 import SEO from "../components/seo"
 
 const IndexPage = () => (
@@ -19,6 +18,9 @@ const IndexPage = () => (
       </AniLink>
       <AniLink className="btn" paintDrip to="giphy" hex="#7d755f">
         Giphy
+      </AniLink>
+      <AniLink className="btn" paintDrip to="weather" hex="#7d755f">
+        Weather
       </AniLink>
     </div>
   </div>
