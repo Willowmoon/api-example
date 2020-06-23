@@ -9,7 +9,7 @@ export default function WeatherAPI() {
   const [zipCode, setZipCode] = useState("")
 
   useEffect(() => {
-    const apiKey = process.env.WEATHER_KEY
+    const apiKey = process.env.GATSBY_WEATHER_KEY
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&units=imperial&appid=${apiKey}`
     const makeApiCall = async () => {
       const res = await fetch(weatherUrl)

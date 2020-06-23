@@ -9,7 +9,7 @@ export default function Giphy() {
   const [gifTitle, setGifTitle] = useState("")
 
   const handleClick = async () => {
-    const apiKey = process.env.GIPHY_KEY
+    const apiKey = process.env.GATSBY_GIPHY_KEY
     const giphyURL = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}`
     let res = await fetch(giphyURL)
     let json = await res.json()
