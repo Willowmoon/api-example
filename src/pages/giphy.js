@@ -44,8 +44,15 @@ export default function Giphy() {
       <SEO title="Giphy API" />
       <div className="App">
         <h1 className="header">Giphy api</h1>
-        <form onClick={handleClick}>
-          <input className="random" type="button" value="random" />
+        <form>
+          <input
+            className="random"
+            aria-label="random"
+            type="button"
+            value="random"
+            onClick={handleClick}
+            onKeyDown={handleClick}
+          />
         </form>
         {gif ? (
           <>
@@ -60,11 +67,12 @@ export default function Giphy() {
         <form onSubmit={onSubmit}>
           <input
             type="text"
+            aria-label="query"
             placeholder="enter query"
             value={gifTitle}
             onChange={handleChange}
           />
-          <input type="submit" value="search" />
+          <input type="submit" aria-label="search" value="search" />
         </form>
         {gifData.data ? (
           <>

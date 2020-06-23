@@ -8,8 +8,8 @@ export default function WeatherAPI() {
   const [zip, setZip] = useState("")
   const [zipCode, setZipCode] = useState("")
 
-  const apiKey = process.env.WEATHER_KEY
   useEffect(() => {
+    const apiKey = process.env.WEATHER_KEY
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&units=imperial&appid=${apiKey}`
     const makeApiCall = async () => {
       const res = await fetch(weatherUrl)
@@ -38,12 +38,13 @@ export default function WeatherAPI() {
         <form onSubmit={handleSubmit}>
           <input
             id="ZipCode"
+            aria-label="zip-code"
             type="text"
             placeholder="Enter Zip code"
             value={zipCode}
             onChange={handleChange}
           />
-          <input type="submit" value="Search" />
+          <input type="submit" aria-label="search" value="Search" />
         </form>
         <Weather weather={weather} />
       </div>

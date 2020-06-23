@@ -43,6 +43,7 @@ export default function Movies() {
           <label htmlFor="movietitle">
             <input
               id="movieTitle"
+              aria-label="title"
               type="text"
               placeholder="title"
               value={movie}
@@ -50,7 +51,7 @@ export default function Movies() {
             />
           </label>
           <label>
-            <input type="submit" value="search" />
+            <input type="submit" aria-label="search" value="search" />
           </label>
         </form>
         <br />
