@@ -9,7 +9,7 @@ export default function Movies() {
   const [movie, setMovie] = useState("")
 
   useEffect(() => {
-    const apiKey = process.env.MOVIE_KEY
+    const apiKey = process.env.API_KEY
     const movieUrl = `https://www.omdbapi.com/?t=${movieTitle}&apikey=${apiKey}`
     const makeApiCall = async () => {
       const res = await fetch(movieUrl)
